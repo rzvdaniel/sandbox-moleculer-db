@@ -11,7 +11,11 @@ module.exports = {
     routes: [
       {
         path: "/api",
+
         mappingPolicy: "restrict",
+
+        autoAliases: true,
+
         aliases: {
           // Users aliases
           "REST users": "users",
@@ -21,8 +25,13 @@ module.exports = {
           "PUT articles/:id/unvote": "articles.unvote",
 
           "REST articles": "articles"
+        },
+        
+        bodyParsers: {
+          json: { limit: "2MB" },
+          urlencoded: { extended: true, limit: "2MB" }
         }
-      }
+      },
     ],
 
     // Serve assets from "public" folder
