@@ -5,6 +5,7 @@
   "main": "services/greeter.service.js",
   "scripts": {
     "start": "moleculer-runner --hot services",
+    "dev": "moleculer-runner --repl --hot services",
     "mon": "nodemon --exec node_modules/moleculer/bin/moleculer-runner.js services"
   },
   "devDependencies": {
